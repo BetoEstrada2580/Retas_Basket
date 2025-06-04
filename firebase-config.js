@@ -18,4 +18,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// config.js
+export const BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? '/'
+    : '/Retas_Basket/';
+
+// Exportar la instancia de Firestore
 export { db };
