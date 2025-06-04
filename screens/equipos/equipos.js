@@ -1,4 +1,4 @@
-import { db } from "./firebase-config.js";
+import { db } from "../../firebase-config.js";
 import {
     collection,
     onSnapshot,
@@ -138,8 +138,8 @@ onSnapshot(equiposQuery, (snapshot) => {
         `;
 
         const editarBtn = document.createElement("button");
-        editarBtn.className = "btn btn-sm btn-outline-secondary mt-2";
-        editarBtn.textContent = "Editar";
+        editarBtn.className = "btn btn-sm btn-primary mt-2";
+        editarBtn.innerHTML = '<i class="fas fa-pen"></i>';
         editarBtn.addEventListener("click", () => {
             equipoEditando = equipoId;
             seleccionados = {};
