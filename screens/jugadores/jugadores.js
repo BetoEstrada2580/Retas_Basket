@@ -66,7 +66,7 @@ form.addEventListener("submit", async (e) => {
 
 const jugadoresQuery = query(collection(db, "Jugadores"), orderBy("nombre"));
 
-onSnapshot(collection(db, "Jugadores"), async (snapshot) => {
+onSnapshot(jugadoresQuery, async (snapshot) => {
     listaJugadores.innerHTML = "";
     const contador = await contarParticipacionesHoy();
 

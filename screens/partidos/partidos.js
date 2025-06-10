@@ -94,6 +94,7 @@ function mostrarPartido() {
 async function declararGanador(ganaA) {
     const ganador = ganaA ? "A" : "B";
     const perdedorId = ganaA ? equipoB.id : equipoA.id;
+    const ganadorId = ganaA ? equipoA.id : equipoB.id;
 
     // Guardar historial
     await addDoc(collection(db, "Partidos"), {
@@ -101,6 +102,7 @@ async function declararGanador(ganaA) {
         equipoA: { id: equipoA.id, jugadores: equipoA.jugadores },
         equipoB: { id: equipoB.id, jugadores: equipoB.jugadores },
         ganador,
+        ganadorId,
     });
 
     // Limpiar equipo activo en perdedor
